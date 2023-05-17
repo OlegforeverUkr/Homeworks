@@ -5,5 +5,5 @@ def entrance_floor_flat(number, etazhey, kv_etazh):
     return f'Подьезд - {podiezd}, Этаж - {etazh}'
 
 
-r = entrance_floor_flat(4, 5, 4)
+r = entrance_floor_flat(5, 5, 4)
 print(r)
