@@ -12,16 +12,6 @@ values
   (5, 'Jenny', 'SmakeMyb', 'eachup@gmail.com', 'f'),
   (6, 'Lora', 'burn23', 'tpicks@gmail.com', 'f');
 
-                     info
------------------------------------------------
- This is Vasya, he has email mmm@mmail.com
- This is Alex, he has email mmm@gmail.com
- This is Alexey, he has email alexey@gmail.com
- This is Helen, she has email hell@gmail.com
- This is Jenny, she has email eachup@gmail.com
- This is Lora, she has email tpicks@gmail.com
-(6 rows)
-
 
 select 
   concat('This is ', name, ', ', 
