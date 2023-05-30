@@ -29,12 +29,10 @@ from users;
  This is Lora, she has email tpicks@gmail.com
 (6 rows)
 
-select '' AS "Gender information:"
-union 
-select concat('We have ', count(*) filter (where gender = 'm'), ' boys!')
+select concat('We have ', count(*) filter (where gender = 'm'), ' boys!') as "Gender information:"
 from users
 union 
-select concat('We have ', count(*) filter (where gender = 'f'), ' girls!') 
+select concat('We have ', count(*) filter (where gender = 'f'), ' girls!') as "Gender information:" 
 from users;
 
  Gender information:
