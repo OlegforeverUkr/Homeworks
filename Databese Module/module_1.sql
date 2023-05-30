@@ -29,17 +29,17 @@ from users;
  This is Lora, she has email tpicks@gmail.com
 (6 rows)
 
-select 'Gender information:' as gen
-union all
-select concat('We have ', count(*) filter (where gender = 'm'), ' boys!') 
-as gen from users
-union all
+select '' AS "Gender information:"
+union 
+select concat('We have ', count(*) filter (where gender = 'm'), ' boys!')
+from users
+union 
 select concat('We have ', count(*) filter (where gender = 'f'), ' girls!') 
-as gen from users;
+from users;
 
-         gen
----------------------
  Gender information:
- We have 3 boys!
+---------------------
+
  We have 3 girls!
+ We have 3 boys!
 (3 rows)
