@@ -1,7 +1,7 @@
 SELECT name, COUNT(word) AS words
 FROM vocabulary v
 JOIN word w ON v.id = w.vocabulary_id
-GROUP BY v.name;
+GROUP BY name;
 
   name   | words
 ---------+-------
