@@ -1,45 +1,34 @@
 import time
+from functools import wraps
 
+# декоратор таймерів обгортає орг. ф-ї викоричтовуючі декоратор @wraps(func)
 
 def timer(func):
-    def wrapper(*args, **kwargs):
+    @wraps(func)
+    def decorated_function(*args, **kwargs):
         time_start = time.time()
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
         time_end = time.time()
-        print(f'Время выполнения - {time_end - time_start}')
-
-    return wrapper
-
-
-def multiply_decorator(func):
-    def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs)
-        print(f"Результат умножения: {result}")
+        print(f"Время выполнения - {time_end - time_start}")
         return result
 
-    return wrapper
-
-
-def add_decorator(func):
-    def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs)
-        print(f"Результат сложения: {result}")
-        return result
-
-    return wrapper
+    return decorated_function
 
 
 @timer
-@multiply_decorator
 def multiply(a, b):
-    return a * b
+    result = a * b
+    print(f"Результат умножения: {result}")
+    return result
 
 
 @timer
-@add_decorator
 def add(a, b):
-    return a + b
+    result = a + b
+    print(f"Результат сложения: {result}")
+    return result
 
 
 if __name__ == "__main__":
     multiply(2, 2)
+
